@@ -10,10 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_09_185744) do
+ActiveRecord::Schema.define(version: 2019_12_09_191109) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.datetime "date_time"
+    t.integer "price"
+    t.boolean "approved"
+    t.bigint "user_id"
+    t.bigint "venue_id"
+    t.bigint "caterer_id"
+    t.bigint "performer_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["caterer_id"], name: "index_bookings_on_caterer_id"
+    t.index ["performer_id"], name: "index_bookings_on_performer_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+    t.index ["venue_id"], name: "index_bookings_on_venue_id"
+  end
 
   create_table "caterers", force: :cascade do |t|
     t.string "name"
@@ -67,6 +83,10 @@ ActiveRecord::Schema.define(version: 2019_12_09_185744) do
     t.index ["user_id"], name: "index_venues_on_user_id"
   end
 
+  add_foreign_key "bookings", "caterers"
+  add_foreign_key "bookings", "performers"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "bookings", "venues"
   add_foreign_key "caterers", "users"
   add_foreign_key "performers", "users"
   add_foreign_key "venues", "users"
