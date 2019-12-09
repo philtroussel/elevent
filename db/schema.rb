@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_09_191109) do
+ActiveRecord::Schema.define(version: 2019_12_09_194351) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,15 @@ ActiveRecord::Schema.define(version: 2019_12_09_191109) do
     t.index ["user_id"], name: "index_caterers_on_user_id"
   end
 
+  create_table "favorited_venues", force: :cascade do |t|
+    t.bigint "venue_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_favorited_venues_on_user_id"
+    t.index ["venue_id"], name: "index_favorited_venues_on_venue_id"
+  end
+
   create_table "performers", force: :cascade do |t|
     t.string "name"
     t.integer "hourly_price"
@@ -70,6 +79,31 @@ ActiveRecord::Schema.define(version: 2019_12_09_191109) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "venue_amenities", force: :cascade do |t|
+    t.bigint "venue_id"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["venue_id"], name: "index_venue_amenities_on_venue_id"
+  end
+
+  create_table "venue_images", force: :cascade do |t|
+    t.bigint "venue_id"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["venue_id"], name: "index_venue_images_on_venue_id"
+  end
+
+  create_table "venue_reviews", force: :cascade do |t|
+    t.bigint "venue_id"
+    t.integer "rating"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["venue_id"], name: "index_venue_reviews_on_venue_id"
+  end
+
   create_table "venues", force: :cascade do |t|
     t.string "name"
     t.string "address"
@@ -88,6 +122,11 @@ ActiveRecord::Schema.define(version: 2019_12_09_191109) do
   add_foreign_key "bookings", "users"
   add_foreign_key "bookings", "venues"
   add_foreign_key "caterers", "users"
+  add_foreign_key "favorited_venues", "users"
+  add_foreign_key "favorited_venues", "venues"
   add_foreign_key "performers", "users"
+  add_foreign_key "venue_amenities", "venues"
+  add_foreign_key "venue_images", "venues"
+  add_foreign_key "venue_reviews", "venues"
   add_foreign_key "venues", "users"
 end
