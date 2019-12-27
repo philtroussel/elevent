@@ -1,0 +1,57 @@
+.horizontal-line {
+  border-top: 1px solid black;
+  width: auto;
+  padding-bottom: 10px;
+}
+
+.brand {
+  letter-spacing: .9rem;
+  font-weight: 200;
+  font-size: 30px;
+  text-align: center;
+}
+
+.footer {
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  flex-shrink: 0;
+  padding-top: 50px;
+}
+
+.footer-items {
+  text-align: center;
+  font-size: 14px;
+  padding-bottom: 10px;
+}
+
+.footer-items a {
+  color: $black;
+  opacity: 0.5;
+  text-decoration: none;
+  padding: 0px 10px
+}
+
+.footer-items a:hover {
+  opacity: 1;
+  text-decoration: none;
+  color: $black;
+}
+
+.footer-links {
+  text-align: center;
+  font-size: 20px;
+}
+
+.footer-links a {
+  color: $black;
+  opacity: 0.5;
+  text-decoration: none;
+  padding: 0px 10px;
+}
+
+.footer-links a:hover {
+  opacity: 1;
+  text-decoration: none;
+  color: $black;
+}
