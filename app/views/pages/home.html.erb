@@ -1,2 +1,55 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4">
+      <form class="home-form" action="/venues" method="get">
+
+        <h2>Book unique venues and activities to organize your perfect event.</h2>
+
+        <div class="form-group">
+          <label for="inputWhere">WHERE</label>
+          <input type="city" name='city' class="form-control" id="inputWhere" placeholder="Mexico City" >
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-sm-6">
+            <div class="datetime-input col-6">
+              <label for="time2" id="time2-label">DD/MM</label>
+              <input  id="time2" type="text" class="datepicker" name="usr_date">
+            </div>
+            <div class="datetime-input col-6">
+              <label for="time3" id="time3-label">HH:MM</label>
+              <input id="time3" type="text" class="timepicker" name="usr_time" >
+            </div>
+          </div>
+
+          <div class="form-group col-sm-6">
+            <label for="inputCheckOut">CHECK OUT DATE</label>
+            <input type="date" name='datetimeout' class="form-control input-ph" id="inputCheckOut" placeholder="yyyy-mm-dd hh">
+            <label for="inputCheckOut">CHECK OUT TIME</label>
+            <input type="time" name='hourtimeout' class="form-control input-ph" id="hourInputCheckIn">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="inputCapacity">CAPACITY</label>
+          <input type="capacity" name='capacity' class="form-control" id="inputCapacity" placeholder="number of guests">
+        </div>
+
+        <button type="submit" class="btn-primary">SUBMIT</button>
+
+      </form>
+    </div>
+
+    <div class="col-7">
+    </div>
+  </div>
+
+  <div class="row">
+
+  </div>
+
+  <div class="row">
+
+  </div>
+</div>
+
