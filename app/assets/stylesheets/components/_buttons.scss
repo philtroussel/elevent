@@ -1,0 +1,24 @@
+.btn-red {
+  background: $red;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  font-size: 16px;
+
+  &:hover {
+    opacity: 0.95;
+    transition: .3s ease;
+    -webkit-transform: scale(0.95);
+    transform: scale(0.95);
+    position: relative;
+    background: $red;
+  }
+}
+
+.btn-small {
+  width: 9rem;
+  height: 4rem;
+}
+
+.btn-left {
+  margin: 2rem 0 0 17rem;
+}
