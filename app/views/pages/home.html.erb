@@ -1,2 +1,152 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container-fluid">
+  <div class="row">
+    <!-- Search form -->
+    <div class="col-12 col-lg-5">
+      <form class="home-form" action="/venues" method="get">
+        <h2>Book unique venues and activities to organize your perfect event.</h2>
+          <div class="form-group">
+            <p class="label-form">WHERE</p>
+            <label for="inputWhere"></label>
+            <input type="city" name='city' class="form-control" id="inputWhere" placeholder="Barcelona" >
+          </div>
+          <div class="form-row">
+            <div class="form-group col-sm-6">
+              <div>
+                <p class="label-form">CHECK IN</p>
+                <label for="time2" id="time2-label"></label>
+                <input  id="time2" type="text" class="datepicker" name="usr_date" placeholder="Date">
+                <label for="time3" id="time3-label"></label>
+                <input id="time3" type="text" class="timepicker" name="usr_time" placeholder="Time">
+              </div>
+            </div>
+            <div class="form-group col-sm-6">
+              <div>
+                <p class="label-form">CHECK OUT</p>
+                <label for="time2" id="time2-label"></label>
+                <input  id="time2" type="text" class="datepicker" name="usr_date" placeholder="Date">
+                <label for="time3" id="time3-label"></label>
+                <input id="time3" type="text" class="timepicker" name="usr_time" placeholder="Time">
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <p class="label-form">GUESTS</p>
+            <label for="inputCapacity"></label>
+            <input type="capacity" name='capacity' class="form-control" id="inputCapacity" placeholder="Number of guests">
+          </div>
+        <button type="submit" class="btn-red btn-small btn-left">Search</button>
+      </form>
+    </div>
+
+    <!-- Main cards for venue/caterer/performer -->
+    <div class="col-12 col-lg-7">
+      <a href="/venues">
+        <div class="card-explore" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_url('homepage/venue.jpg') %>)">
+          <span>VENUES</span>
+        </div>
+      </a>
+      <a href="/caterings">
+        <div class="card-explore" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_url('homepage/catering.jpg') %>)">
+          <span>CATERINGS</span>
+        </div>
+      </a>
+      <a href="/performers">
+        <div class="card-explore" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_url('homepage/performer.jpg') %>)">
+          <span>PERFORMERS</span>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- Introducing more Entertainings for your event -->
+  <div class="row row2">
+    <h2>Introducing more Entertainings for your event</h2>
+    <div class="cards-entertaining">
+      <div class="card-entertaining">
+        <%= image_tag "homepage/street-dancer.jpg", class: "card-entertaining-img" %>
+          <div class="card-entertaining-infos">
+            <div>
+              <h3>STREET DANCER</h3>
+              <p>Activity description</p>
+            </div>
+          </div>
+      </div>
+      <div class="card-entertaining">
+        <%= image_tag "homepage/fireworks.jpg", class: "card-entertaining-img" %>
+          <div class="card-entertaining-infos">
+            <div>
+              <h3>FIREWORKS</h3>
+              <p>Activity description</p>
+            </div>
+          </div>
+      </div>
+      <div class="card-entertaining">
+        <%= image_tag "homepage/fire-dancer.jpg", class: "card-entertaining-img" %>
+          <div class="card-entertaining-infos">
+            <div>
+              <h3>FIRE DANCER</h3>
+              <p>Activity description</p>
+            </div>
+          </div>
+      </div>
+      <div class="card-entertaining">
+        <%= image_tag "homepage/fire-player.jpg", class: "card-entertaining-img" %>
+          <div class="card-entertaining-infos">
+            <div>
+              <h3>FIRE PLAYER</h3>
+              <p>Activity description</p>
+            </div>
+          </div>
+      </div>
+      <div class="card-entertaining">
+        <%= image_tag "homepage/daft-punk-clones.jpg", class: "card-entertaining-img" %>
+          <div class="card-entertaining-infos">
+            <div>
+              <h3>DAFT PUNK CLONES</h3>
+              <p>Activity description</p>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Recommended event package -->
+  <div class="row row2">
+    <h2>Recommended event package</h2>
+    <div class="cards-package">
+      <div class="card-entertaining">
+        <%= image_tag "homepage/casual-chic.jpg", class: "card-entertaining-img" %>
+          <div class="card-entertaining-infos">
+            <div>
+              <h3>CASUAL CHIC DINNER FOR 50 GUESTS</h3>
+              <p>Event description</p>
+              <p>Price</p>
+            </div>
+          </div>
+      </div>
+      <div class="card-entertaining">
+        <%= image_tag "homepage/product-launch.jpg", class: "card-entertaining-img" %>
+          <div class="card-entertaining-infos">
+            <div>
+              <h3>PRODUCT LAUNCH IN A GREENHOUSE</h3>
+              <p>Event description</p>
+              <p>Price</p>
+            </div>
+          </div>
+      </div>
+      <div class="card-entertaining">
+        <%= image_tag "homepage/birthday-party.jpg", class: "card-entertaining-img" %>
+          <div class="card-entertaining-infos">
+            <div>
+              <h3>BIRTHDAY PARTY IN PERFECT AREA</h3>
+              <p>Event description</p>
+              <p>Price</p>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<%= javascript_pack_tag 'home-form' %>

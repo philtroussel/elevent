@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :venues do
-    resource :bookings, only: [:create] 
+    resource :bookings, only: [:create]
     resources :favorited_venues, only: [:create, :destroy]
     resources :venue_amenities, only: [:index, :create, :destroy]
     resources :venue_images, only: [:index, :create, :destroy]
