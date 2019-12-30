@@ -1,5 +1,6 @@
 <div class="container-fluid">
   <div class="row">
+    <!-- Search form -->
     <div class="col-12 col-lg-5">
       <form class="home-form" action="/venues" method="get">
         <h2>Book unique venues and activities to organize your perfect event.</h2>
@@ -37,15 +38,32 @@
       </form>
     </div>
 
-
-
+    <!-- Main cards for venue/caterer/performer -->
     <div class="col-12 col-lg-7">
-
+      <a href="/venues">
+        <div class="card-explore" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_url('homepage/venue.jpg') %>)">
+          <span>VENUES</span>
+        </div>
+      </a>
+      <a href="/caterings">
+        <div class="card-explore" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_url('homepage/catering.jpg') %>)">
+          <span>CATERINGS</span>
+        </div>
+      </a>
+      <a href="/performers">
+        <div class="card-explore" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_url('homepage/performer.jpg') %>)">
+          <span>PERFORMERS</span>
+        </div>
+      </a>
     </div>
   </div>
+
+  <!-- Introducing more Entertainings for your event -->
   <div class="row">
 
   </div>
+
+  <!-- Recommended event package -->
   <div class="row">
 
   </div>
