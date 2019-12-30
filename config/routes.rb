@@ -13,5 +13,5 @@ Rails.application.routes.draw do
   resources :favorited_venues, only: [:index]
 
   resources :caterers
-  resources: performers
+  resources :performers
 end
