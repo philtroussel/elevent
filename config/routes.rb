@@ -11,4 +11,7 @@ Rails.application.routes.draw do
 
   resources :bookings, only: [:index, :edit, :show]
   resources :favorited_venues, only: [:index]
+
+  resources :caterers
+  resources: performers
 end
