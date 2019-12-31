@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :favorited_venues, only: [:create, :destroy]
     resources :venue_amenities, only: [:index, :create, :destroy]
     resources :venue_images, only: [:index, :create, :destroy]
-    resources :venue_reviews, only [:index]
+    resources :venue_reviews, only: [:index]
   end
 
   resources :bookings, only: [:index, :edit, :show]
