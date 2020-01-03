@@ -1,7 +1,7 @@
 class VenuesController < ApplicationController
-    def index  
+    def index
         @venues = Venue.all
-    end 
+    end
 
     def show
         find_venue
