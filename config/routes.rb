@@ -17,4 +17,8 @@ Rails.application.routes.draw do
   resources :performers
 
   resources :venue_reviews, only: [:new, :create]
+
+  resources :conversations do
+    resources :messages
+  end
 end
