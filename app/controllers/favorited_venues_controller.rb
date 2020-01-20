@@ -1,6 +1,6 @@
 class FavoritedVenuesController < ApplicationController
     def index
-        @favorited_venues = FavoritedVenue.where(FavoritedVenue.user = current_user)
+        @favorited_venues = FavoritedVenue.where(FavoritedVenue.user == current_user)
     end
 
     def create
